@@ -1,9 +1,4 @@
-const harvest = creep => {
-  const sources = creep.room.find(FIND_SOURCES);
-  if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE) {
-    creep.moveTo(sources[1]);
-  }
-};
+const harvest = require('task.harvest');
 
 const transferEnergy = creep => {
   const targets = creep.room.find(FIND_STRUCTURES, {
@@ -35,7 +30,7 @@ const roleHarvester = {
     if (creep.memory.transfering) {
       transferEnergy(creep);
     } else {
-      harvest(creep);
+      harvest(creep, 1);
     }
   }
 }

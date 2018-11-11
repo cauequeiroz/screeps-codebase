@@ -1,9 +1,4 @@
-const harvest = creep => {
-  const sources = creep.room.find(FIND_SOURCES);
-  if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-    creep.moveTo(sources[0]);
-  }
-};
+const harvest = require('task.harvest');
 
 const buildContructionSites = creep => {
   const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
@@ -27,7 +22,7 @@ const roleBuilder = {
     if (creep.memory.building) {
       buildContructionSites(creep);
     } else {
-      harvest(creep);
+      harvest(creep, 0);
     }
   }
 }
