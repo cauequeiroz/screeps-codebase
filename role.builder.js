@@ -1,4 +1,5 @@
 const harvest = require('task.harvest');
+const logger = require('helper.logger');
 
 const buildContructionSites = creep => {
   const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
@@ -13,10 +14,12 @@ const roleBuilder = {
   run: (creep) => {
     if (creep.memory.building && creep.carry.energy == 0) {
       creep.memory.building = false;
+      logger(creep, 'harvest');
     }
 
     if (!creep.memory.building && creep.carry.energy == creep.carryCapacity) {
       creep.memory.building = true;
+      logger(creep, 'build');
     }
 
     if (creep.memory.building) {

@@ -1,4 +1,5 @@
 const harvest = require('task.harvest');
+const logger = require('helper.logger');
 
 const transferEnergy = creep => {
   const targets = creep.room.find(FIND_STRUCTURES, {
@@ -21,10 +22,12 @@ const roleHarvester = {
 
     if (creep.memory.transfering && creep.carry.energy == 0) {
       creep.memory.transfering = false;
+      logger(creep, 'harvest');
     }
 
     if (!creep.memory.transfering && creep.carry.energy == creep.carryCapacity) {
       creep.memory.transfering = true;
+      logger(creep, 'transfer');
     }
 
     if (creep.memory.transfering) {
