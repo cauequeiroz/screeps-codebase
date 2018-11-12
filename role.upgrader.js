@@ -22,7 +22,7 @@ const roleUpgrader = {
     if (creep.memory.upgrading) {
       upgradeController(creep);
     } else {
-      harvest(creep, 0);
+      harvest(creep, 1);
     }
   }
 }

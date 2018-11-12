@@ -6,7 +6,7 @@ const spawnCreeps = require('task.spawnCreeps');
 spawnCreeps.emptyMemory();
 spawnCreeps.spawnUpgrader(1);
 spawnCreeps.spawnHarvester(1);
-spawnCreeps.spawnBuilder(2);
+spawnCreeps.spawnBuilder(4);
 
 for (let name in Game.creeps) {
   const creep = Game.creeps[name];
