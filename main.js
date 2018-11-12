@@ -4,8 +4,8 @@ const roleBuilder = require('role.builder');
 const spawnCreeps = require('task.spawnCreeps');
 
 spawnCreeps.emptyMemory();
-spawnCreeps.spawnUpgrader(1);
-spawnCreeps.spawnHarvester(1);
+spawnCreeps.spawnHarvester(2);
+spawnCreeps.spawnUpgrader(4);
 spawnCreeps.spawnBuilder(4);
 
 for (let name in Game.creeps) {

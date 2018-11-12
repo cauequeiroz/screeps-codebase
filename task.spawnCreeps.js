@@ -1,5 +1,5 @@
 const spawn = role => {
-  const spawnHasEnergy = Game.spawns['Spawn1'].energy > 200;
+  const spawnHasEnergy = Game.spawns['Spawn1'].room.energyAvailable >= 200;
   if (!spawnHasEnergy) return;
 
   const newName = `${role} ${Game.time}`;
